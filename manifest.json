@@ -9,6 +9,10 @@
         "default_icon": "icons/download.png",
         "default_popup": "popup.html"
     },
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+    ],
     "icons": {
         "128": "icons/download.png",
         "48": "icons/download.png",
@@ -19,7 +23,7 @@
     },
     "content_scripts": [{
         "matches": ["http://*/*", "https://*/*"],
-        "js": ["myscript.js"]
+        "js": ["myscript.js", "jquery.js"]
     }]
 
 }
