@@ -14,4 +14,84 @@
 
 </body>
 
+=======
+<html xmlns:display="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+
+}
+
+h2{
+display:inline;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center">Quick Cite</h1>
+<div style="clear: both"><h2 style="text-align:left">MLA</h2>
+<label class="switch" style="text-align:center">
+    <input type="checkbox" checked>
+    <div class="slider round"></div>
+</label>
+    <h2 style="text-align:right">APA</h2></div>
+
+<textarea name="Text1" cols="40" rows="5"></textarea>
+
+</body>
+>>>>>>> 6c2fcbf2734de59b18d61dfbb753dccb7c43db43
 </html>
