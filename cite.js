@@ -6,16 +6,11 @@
 //chrome.runtime.sendMessage("author");
 
 
-var title = document.querySelector('meta[property="og:title"]').getAttribute('content');
+var title = document.title;
 chrome.runtime.sendMessage(
     {
         "author": author,
-        "date": date,
         "title": title,
-        "siteName": siteName,
-        "publisher": publisher,
-        "accessed": accessed,
-        "URL": URL,
-        "relScore": reliabilityScore
+
     }
 );

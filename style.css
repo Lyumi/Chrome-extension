@@ -4,12 +4,15 @@ html, body, div, p {
 }
 
 h1 {
+    left-margin: 10px
     font-weight: normal;
-    text-align: center
+    text-align: left;
+    color: #fcfff5
 }
 
 h2 {
-    font-weight: normal
+    font-weight: normal;
+    color: #fcfff5
 }
 
 img {
@@ -17,10 +20,10 @@ img {
 }
 
 body {
-    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-family: "Helvetica Neue",  sans-serif;
     width: 300px;
-    height: 700px;
-    background-color: #c0d1ed;
+    height: auto;
+    background-color: #3e606f;
     overflow: hidden;
     padding: 10px;
 }
@@ -30,7 +33,6 @@ body {
     display: inline-block;
     width: 36px;
     height: 22px;
-    border: 3px solid black;
     margin: auto
 }
 
@@ -45,7 +47,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2359af;
+    background-color: #193441;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -57,17 +59,17 @@ body {
     width: 18px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: #FCFFF5;
     -webkit-transition: .4s;
     transition: .4s;
 }
 
 input:checked+.slider {
-    background-color: #2359af;
+    background-color: #193441;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2359af;
+    box-shadow: 0 0 1px #193441;
 }
 
 input:checked+.slider:before {
@@ -93,21 +95,17 @@ h2 {
 #toggle {
   margin: auto;
 width: 50%;
-border: 3px solid green;
-padding: 10px;
+
 
 }
 
 
 
 #contentBox>div {
-    background: white;
+    background: #FCFFF5;
     margin-bottom: 7px;
     padding: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
-}
-
-#title {
     font-weight: bold;
 }
