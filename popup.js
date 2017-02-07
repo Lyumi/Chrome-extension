@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
-
+e('title').innerHTML = "dd";
 chrome.tabs.executeScript(null, {
     file: "content.js"
 });
