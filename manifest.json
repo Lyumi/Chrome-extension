@@ -4,7 +4,11 @@
     "name": "quick cite",
     "description": "making quick citation",
     "version": "1.0",
+    "content_scripts": [{
+        "matches":    ["http://*/*", "https://*/*"],
+        "js":         ["content.js"]
 
+      }],
     "browser_action": {
         "default_icon": "icons/download.png",
         "default_popup": "popup.html"
