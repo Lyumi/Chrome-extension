@@ -28,7 +28,7 @@
     ],
     "icons": {
         "128": "icons/download.png.png",
-        "48": "icons/download.png.png,
+        "48": "icons/download.png.png",
         "16": "icons/download.png.png"
     }
 
