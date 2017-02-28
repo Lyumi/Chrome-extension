@@ -5,8 +5,11 @@
 // URL = window.location.href;
 
 
-//title = document.querySelector('meta[property="og:title"]').getAttribute('content');
-//author = document.querySelector('meta[name="author]').getAttribute('content');
+
+function e(id) {
+    return document.getElementById(id)
+}
+
 
 
 
@@ -17,6 +20,13 @@
 //chrome.runtime.sendMessage(document.querySelector('meta[property="og:title"]').getAttribute('content'));
 
 //chrome.runtime.sendMessage("author");
+
+var title = document.title;
+//var author = document.querySelector('meta[name="author]').getAttribute('content');
+console.log(title);
+//console.log(author);
+e('title').innerHTML=title;
+
 
 
 chrome.runtime.sendMessage({greeting: "hello"}, function(response) {

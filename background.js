@@ -1,7 +1,7 @@
 function e(id) {
     return document.getElementById(id)
 }
-
+var title = document.title;
 chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
-  sendResponse({farewell:"goodbye"});
+  sendResponse({farewell:title});
 });

@@ -4,13 +4,17 @@
 //var author = document.querySelector('meta[name="author]').getAttribute('content');
 
 //chrome.runtime.sendMessage("author");
-chrome.extension.sendRequest({greeting: "title"}, function(response) {
-  e('title').innerHTML = response.farewell;
+//e('title').innerHTML = "test";
+console.log("123");
+chrome.runtime.sendMessage("hello", function(response) {
+    console.log("123");
+    console.log(response);
+  e('title').innerHTML = memes;
 });
 
 
-function e(id) {
-    return document.getElementById(id)
+//function e(id) {
+  //  return document.getElementById(id)
 }
 var citeData;
 
@@ -20,7 +24,3 @@ var citeData;
 
 
 
-
-chrome.tabs.executeScript(null, {
-    file: "content.js"
-});
