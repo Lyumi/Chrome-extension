@@ -98,8 +98,20 @@ width: 50%;
 
 
 }
+/* delete the outline of the HTML textbox*/
 
-
+input {
+    border: none;
+    background: transparent;
+    resize: vertical;
+       width: 200px;
+}
+input:active {
+      width: auto;
+  }
+  input:focus {
+       min-width: 200px;
+   }
 
 #contentBox>div {
     background: #FCFFF5;
@@ -107,10 +119,6 @@ width: 50%;
     padding: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
-    font-weight: bold;
-<<<<<<< Updated upstream
-    contenteditable: "false"
-=======
-    placeholder:"default text"
->>>>>>> Stashed changes
+
+
 }
