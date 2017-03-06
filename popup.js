@@ -18,8 +18,8 @@ window.addEventListener('load', function(evt) {
 // This callback function is called when the content script has been
 // injected and returned its results
 function onPageDetailsReceived(pageDetails)  {
-    e('title').innerHTML = title.bold()+pageDetails.title2;
-    console.log("Title: " + title2);
+    e('title').innerHTML = title.bold()+pageDetails.title;
+    console.log("Title: " + title);
     //document.getElementById('url').value = pageDetails.url;
     //document.getElementById('summary').innerText = pageDetails.summary;
 }

@@ -1,7 +1,7 @@
 
 
 chrome.runtime.sendMessage({
-    'title2': document.title
+    'title': document.title
  
 });
 
