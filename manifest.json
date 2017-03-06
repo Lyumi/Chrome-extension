@@ -1,30 +1,57 @@
 {
+
     "manifest_version": 2,
 
+
     "name": "quick cite",
+
     "description": "making quick citation",
-    "version": "1.0",
-    "content_scripts": [{
+
+    "version": "1.1",
+
+    "content_scripts": [
+      {
+
         "matches":    ["http://*/*", "https://*/*"],
+
         "js":         ["content.js"]
 
-      }],
+
+      }
+      ],
+
     "browser_action": {
+
         "default_icon": "icons/download.png.png",
+
         "default_popup": "popup.html"
+
     },
+
     "background": {
-  "scripts": ["background.js"]
+
+        "scripts": ["background.js", "event.js"]
+    
 },
+
     "permissions": [
+
         "activeTab",
+
         "https://ajax.googleapis.com/"
+
     ],
+
     "icons": {
+
         "128": "icons/download.png.png",
+
         "48": "icons/download.png.png",
+
         "16": "icons/download.png.png"
+
     }
+
 
 
 
