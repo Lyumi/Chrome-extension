@@ -1,4 +1,11 @@
-var title= "Title: ";
+var title= "Title: ",
+    author= "Author: ",
+    websitetitle= "Website: ",
+    datepublished= "Date Published: ",
+    publisher="Publisher: ",
+    URL="URL: ";
+
+
 function e(id) {
 
    return document.getElementById(id) }
@@ -19,9 +26,13 @@ window.addEventListener('load', function(evt) {
 // injected and returned its results
 function onPageDetailsReceived(pageDetails)  {
     e('title').innerHTML = title.bold()+pageDetails.title;
-    console.log("Title: " + title);
-    //document.getElementById('url').value = pageDetails.url;
-    //document.getElementById('summary').innerText = pageDetails.summary;
+    e('author').innerHTML = author.bold()+pageDetails.author;
+    e('website title').innerHTML = websitetitle.bold()+pageDetails.websitetitle;
+    e('datepublished').innerHTML = datepublished.bold()+pageDetails.datepublished;
+    e('publisher').innerHTML = publisher.bold()+pageDetails.publisher;
+    e('url').innerHTML = url.bold()+pageDetails.url;
+    e('citation').innerHTML =pageDetails.citation;
+
 }
 
 console.log("Hi from Popup");
