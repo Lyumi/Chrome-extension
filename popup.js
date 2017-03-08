@@ -28,10 +28,10 @@ function onPageDetailsReceived(pageDetails)  {
     e('title').innerHTML = title.bold()+pageDetails.title;
     e('author').innerHTML = author.bold()+pageDetails.author;
     e('website title').innerHTML = websitetitle.bold()+pageDetails.websitetitle;
-    e('datepublished').innerHTML = datepublished.bold()+pageDetails.datepublished;
+    e('date published').innerHTML = datepublished.bold()+pageDetails.datepublished;
     e('publisher').innerHTML = publisher.bold()+pageDetails.publisher;
-    e('url').innerHTML = url.bold()+pageDetails.url;
-    e('citation').innerHTML =pageDetails.citation;
+    e('URL').innerHTML = url.bold()+pageDetails.url;
+    e('complete citation').innerHTML =pageDetails.citation;
 
 }
 
