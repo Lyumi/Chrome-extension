@@ -3,7 +3,8 @@ var title= "Title: ",
     websitetitle= "Website: ",
     datepublished= "Date Published: ",
     publisher="Publisher: ",
-    URL="URL: ";
+    URL="URL: ",
+    citation = "Citation: ";
 
 
 function e(id) {
@@ -31,8 +32,8 @@ function onPageDetailsReceived(pageDetails)  {
     e('date').innerHTML = datepublished.bold()+pageDetails.date;
     e('publisher').innerHTML = publisher.bold()+pageDetails.publisher;
     e('URL').innerHTML = URL.bold()+pageDetails.URL;
-    e('complete citation').innerHTML =pageDetails.citation;
-
+    e('complete citation').innerHTML =citation.bold() + pageDetails.citation;
+    
 }
 
 console.log("Hi from Popup");
