@@ -28,9 +28,9 @@ function onPageDetailsReceived(pageDetails)  {
     e('title').innerHTML = title.bold()+pageDetails.title;
     e('author').innerHTML = author.bold()+pageDetails.author;
     e('website title').innerHTML = websitetitle.bold()+pageDetails.websitetitle;
-    e('date published').innerHTML = datepublished.bold()+pageDetails.datepublished;
+    e('date').innerHTML = datepublished.bold()+pageDetails.date;
     e('publisher').innerHTML = publisher.bold()+pageDetails.publisher;
-    e('URL').innerHTML = url.bold()+pageDetails.url;
+    e('URL').innerHTML = URL.bold()+pageDetails.URL;
     e('complete citation').innerHTML =pageDetails.citation;
 
 }
