@@ -12,7 +12,8 @@ var author2 = 'n.a',
     websitetitle2 = 'n.a',
     URL2 = window.location.href,
     publisher2 = 'N.P',
-    accessed_date = (curr_date + "-" + m_names[curr_month] + "-" + curr_year);
+    accessed_date = (curr_date + " " + m_names[curr_month] + " " + curr_year);
+    accessed_dateMLA = (curr_date + " " + m_names[curr_month] + ", " + curr_year);
 var whitespaceChar = author2.indexOf(" ")>=0;
 var authorL = author2.substr(whitespaceChar);
 var authorF = author2.substr(0,whitespaceChar);
@@ -41,7 +42,7 @@ author2 = getMetaName('author', author2);
 websitetitle2 = getMetaProp('og:site_name', websitetitle2);
 published_date = getMetaProp('og:pubdate', published_date);
 
-var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_date + ".";
+var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";
 completecitationAPA = authorL +", " + authorF + "." +  accessed_date + ". " + title2 + ". " + "Retrieved from "+ URL2;
 chrome.runtime.sendMessage({
     'title': title2,
