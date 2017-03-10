@@ -5,6 +5,9 @@ var d = new Date();
 var curr_date = d.getDate();
 var curr_month = d.getMonth();
 var curr_year = d.getFullYear();
+var whitespaceChar = author2.indexOf(' ') >=0;
+var authorL = author2.substr(whitespaceChar);
+var authorF = author2.substr(0,whitespaceChar);
 var author2 = 'n.a',
     published_date = 'n.d',
     title2 = document.title,
@@ -38,6 +41,7 @@ websitetitle2 = getMetaProp('og:site_name', websitetitle2);
 published_date = getMetaProp('og:pubdate', published_date);
 
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_date + ".";
+completecitationAPA = authorL +", " + authorF + "." +  date3 + ". " + title2 + ". " + "Retrieved from "+ URL2;
 chrome.runtime.sendMessage({
     'title': title2,
     'URL': URL2,
