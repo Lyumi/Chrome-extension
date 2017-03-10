@@ -1,3 +1,11 @@
+function e(id) {
+
+    return document.getElementById(id)
+
+}
+
+
+
 var m_names = new Array("Jan", "Feb", "Mar",
     "Apr", "May", "Jun", "Jul", "Aug", "Sep",
     "Oct", "Nov", "Dec");
@@ -42,15 +50,31 @@ author2 = getMetaName('author', author2);
 websitetitle2 = getMetaProp('og:site_name', websitetitle2);
 published_date = getMetaProp('og:pubdate', published_date);
 
+
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";
 completecitationAPA = authorL +", " + authorF + "." +  accessed_date + ". " + title2 + ". " + "Retrieved from "+ URL2;
+
+//if(checked){
 chrome.runtime.sendMessage({
     'title': title2,
     'URL': URL2,
     'author': author2,
     'date': published_date,
     'websitetitle': websitetitle2,
-    'citation': completecitationMLA
+    'citation': completecitationMLA,
+    'citation2': completecitationAPA
 
 
 });
+//}
+/*else{
+chrome.runtime.sendMessage({
+    'title': title2,
+    'URL': URL2,
+    'author': author2,
+    'date': published_date,
+    'websitetitle': websitetitle2,
+    'citation': completecitationAPA
+}
+
+*/
