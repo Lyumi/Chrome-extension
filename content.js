@@ -8,7 +8,7 @@ var curr_year = d.getFullYear();
 var author2 = 'n.a',
     published_date = 'n.d',
     title2 = document.title,
-    websitetitle2 = window.location.hostname,
+    websitetitle2 = 'n.a',
     URL2 = window.location.href,
     publisher2 = 'N.P',
     accessed_date = (curr_date + "-" + m_names[curr_month] + "-" + curr_year);
@@ -34,7 +34,8 @@ function getMetaProp(key, filler) {
 }
 
 author2 = getMetaName('author', author2);
-title2 = getMetaName('og:site_name', title2);
+websitetitle2 = getMetaProp('og:site_name', websitetitle2);
+published_date = getMetaProp('og:pubdate', published_date);
 
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_date + ".";
 chrome.runtime.sendMessage({
@@ -42,10 +43,7 @@ chrome.runtime.sendMessage({
     'URL': URL2,
     'author': author2,
     'date': published_date,
-    //'websitetitle' : websitetitle2,
-    //'publisher' : publisher
-    //'websitetitle' = websitetitle2,
-    //'publisher' = publisher
+    'websitetitle': websitetitle2,
     'citation': completecitationMLA
 
 
