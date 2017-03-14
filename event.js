@@ -8,5 +8,3 @@ function getPageDetails(callback) {
         callback(message); 
     }); 
 };
-
-console.log("Hi from Event");

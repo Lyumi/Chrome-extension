@@ -98,8 +98,8 @@ width: 50%;
 
 
 }
-/* delete the outline of the HTML textbox*/
 
+/* delete the outline of the HTML textbox*/
 input {
     border: none;
     background: transparent;
