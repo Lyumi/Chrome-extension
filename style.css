@@ -21,7 +21,7 @@ img {
 
 body {
     font-family: "Helvetica Neue",  sans-serif;
-    width: 300px;
+    width: auto;
     height: auto;
     background-color: #3e606f;
     overflow: hidden;

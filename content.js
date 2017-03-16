@@ -31,8 +31,8 @@ function getMetaName(key, filler) {
 
 function getMetaProp(key, filler) {
     for (var i = 0; i < metas.length; i++) {
-        if ( key) {
-            return metas[i]metas[i].getAttribute("name") ==.getAttribute("content");
+        if (metas[i].getAttribute("property") == key) {
+            return metas[i].getAttribute("content");
         }
     }
     return filler;
@@ -65,6 +65,6 @@ chrome.runtime.sendMessage({
     'author'      : author2,
     'date'        : published_date,
     'websitetitle': websitetitle2,
-    'citation': completecitationMLA,
-    'citation2': completecitationAPA
+    'citationMLA': completecitationMLA,
+    'citationAPA': completecitationAPA
 });

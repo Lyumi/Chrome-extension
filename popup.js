@@ -4,14 +4,14 @@ var title = "Title: ",
     datepublished = "Date Published: ",
     publisher = "Publisher: ",
     URL = "URL: ",
-    citation = "Citation: ";
+    citation = "Citation: ",
+    status = false;
 
 
 function e(id) {
 
     return document.getElementById(id)
 }
-
 
 // When the popup HTML has loaded
 window.addEventListener('load', function(evt) {
@@ -23,23 +23,27 @@ window.addEventListener('load', function(evt) {
         eventPage.getPageDetails(onPageDetailsReceived);
     });
 });
-var checked = e('slider round').innerHTML.checked;
-// This callback function is called when the content script has been
-// injected and returned its results
+
+document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#citeType').addEventListener('change', changeHandler);
+});
+function changeHandler(){
+   if(showAlert.checked){
+      status = true;
+   }
+}
 
 function onPageDetailsReceived(pageDetails) {
-
-
     e('title').innerHTML = title.bold() + pageDetails.title;
     e('author').innerHTML = author.bold() + pageDetails.author;
     e('website title').innerHTML = websitetitle.bold() + pageDetails.websitetitle;
     e('date').innerHTML = datepublished.bold() + pageDetails.date;
     e('publisher').innerHTML = publisher.bold() + pageDetails.publisher;
     e('URL').innerHTML = URL.bold() + pageDetails.URL;
-    if (checked) {
-        e('complete citation').innerHTML = citation.bold() + pageDetails.citation;
+    if (status) {
+        e('complete citation').innerHTML = citation.bold() + pageDetails.citationMLA;
     } else {
-        e('complete citation').innerHTML = citation.bold() + pageDetails.citation2;
+        e('complete citation').innerHTML = citation.bold() + pageDetails.citationAPA;
     }
 }
 
