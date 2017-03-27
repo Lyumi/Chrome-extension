@@ -3,53 +3,49 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-      <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <center>
-        <table>
+    <div class="ct-container">
+        <center>
             <h1 style="text-align:center">Quick Cite</h1>
-            <div id="toggle">
-                <h4>MLA</h4>
-                <label class="switch" style="text-align:center">
-                    <input type="checkbox" id="citeType">
-                    <div class="slider round" >
-                        </label>
+                <div id="toggle">
+                    <h4>MLA</h4>
+                    <label class="switch" style="text-align:center">
+                        <input type="checkbox" id="citeType">
+                        <div class="slider round">
+                    </label>
                     </div>
-                </label>
-                <h4>APA</h4></div>
-        </table>
-    </center>
-    <div id="contentBox">
-        <div class= "row" id="title">
-            <b>Title</b>
-            <input type="text" name="inputBox" id="title2" placeholder="enter your text here">
+                    </label>
+                    <h4>APA</h4>
+                </div>            
+        </center>
+        <div id="contentBox">
+            <div id="title" border-top-radius: 3px;>
+                <b>Title</b>
+                <input type="text" name="inputBox" id="title2" placeholder="enter your text here">
+            </div>
+            <div id="author">
+                <b>Author</b>
+                <input type="text" name="inputBox" id="author2" placeholder="enter your text here">
+            </div>
+            <div id="website title">
+                <b>Website title</b>
+                <input type="text" name="inputBox" placeholder="enter your text here">
+            </div>
+            <div id="date">
+                <b>Date published</b>
+                <input type="text" name="inputBox" placeholder="enter your text here">
+            </div>
+            <div id="publisher">
+                <b>Publisher</b>
+                <input type="text" name="inputBox" placeholder="enter your text here">
+            </div>
+            <div id="URL" border-bottom-radius: 3px;>
+                <b>URL</b> </div>
+            <div id="complete_citation">
+                <b>Complete citation</b></div>
         </div>
-        <div class ="row" id="author">
-            <b>Author</b>
-            <input type="text" name="inputBox" id="author2" placeholder="enter your text here">
-        </div>
-        <div class = "row" id="website title">
-            <b>Website title</b>
-            <input type="text" name="inputBox" placeholder="enter your text here">
-        </div>
-        <div class ="row" id="date">
-            <b>Date published</b>
-            <input type="text" name="inputBox" placeholder="enter your text here">
-        </div>
-        <div class = "row" id="publisher">
-            <b>Publisher</b>
-            <input type="text" name="inputBox" placeholder="enter your text here">
-        </div>
-        <div class = "row" id="URL">
-            <b>URL</b> </div>
-        <div class = "row"  id="complete citation">
-            <b>Complete citation</b></div>
     </div>
     <script src="popup.js"></script>
     <script src="content.js"></script>

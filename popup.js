@@ -41,9 +41,9 @@ function onPageDetailsReceived(pageDetails) {
     e('publisher').innerHTML = publisher.bold() + pageDetails.publisher;
     e('URL').innerHTML = URL.bold() + pageDetails.URL;
     if (status) {
-        e('complete citation').innerHTML = citation.bold() + pageDetails.citationMLA;
+        e('complete_citation').innerHTML = citation.bold() + pageDetails.citationMLA;
     } else {
-        e('complete citation').innerHTML = citation.bold() + pageDetails.citationAPA;
+        e('complete_citation').innerHTML = citation.bold() + pageDetails.citationAPA;
     }
 }
 

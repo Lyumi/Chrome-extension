@@ -44,7 +44,7 @@ var author2        = 'n.a',
     title2         = document.title,
     websitetitle2  = 'n.a',
     URL2           = window.location.href,
-    publisher2     = 'N.P',
+    publisher2 = getMetaName('copyright',"N.P"),
     whitespaceChar = author2.indexOf(" ") >= 0,
     authorL        = author2.substr(whitespaceChar),
     authorF        = author2.substr(0, whitespaceChar);

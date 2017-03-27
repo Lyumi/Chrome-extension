@@ -1,15 +1,19 @@
-html, body, div, p {
+html,
+body,
+div,
+p {
     margin: 0;
     padding: 0
 }
 
 h1 {
-    left-margin: 10px
-    font-weight: normal;
+    left-margin: 10px font-weight: normal;
     text-align: left;
-    color: #fcfff5
+    color: #131919
 }
 
+
+/*
 h2 {
     font-weight: normal;
     color: #fcfff5
@@ -18,14 +22,20 @@ h2 {
 img {
     border: 0
 }
-
+*/
 body {
-    font-family: "Helvetica Neue",  sans-serif;
-    width: auto;
-    height: auto;
-    background-color: #3e606f;
+   font-family:"Helvetica Neue","Arial",sans-serif;
     overflow: hidden;
-    padding: 10px;
+
+}
+
+
+.ct-container {
+    background: #C1E1ED;
+    border: 1px solid #131919;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+    margin: 1px auto 2px;
+    width: 320px;
 }
 
 .switch {
@@ -47,7 +57,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #193441;
+    background-color: #273D3B;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -65,11 +75,11 @@ body {
 }
 
 input:checked+.slider {
-    background-color: #193441;
+    background-color: #273D3B;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #193441;
+    box-shadow: 0 0 1px #273D3B;
 }
 
 input:checked+.slider:before {
@@ -92,33 +102,55 @@ input:checked+.slider:before {
 h2 {
     display: inline;
 }
+
 #toggle {
-  margin: auto;
-width: 50%;
-
-
+    margin: auto;
+    width: 50%;
 }
 
+
 /* delete the outline of the HTML textbox*/
+
 input {
     border: none;
     background: transparent;
     resize: vertical;
-       width: 200px;
+    width: 200px;
 }
+
 input:active {
-      width: auto;
-  }
-  input:focus {
-       min-width: 200px;
-   }
+    width: auto;
+}
+
+input:focus {
+    min-width: 200px;
+}
+
+#contentBox {
+    margin: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
 
 #contentBox>div {
-    background: #FCFFF5;
-    margin-bottom: 7px;
-    padding: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    border-radius: 3px;
+    word-wrap: break-word;
+    padding:4px;
+    font-size:14px;
+    background: #76C7C6;
+    margin-bottom: 1px;
+    font-color: #131919;
+}
 
+#title {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
 
+#complete_citation {
+    border-bottom-left-radius: 3px;
+    border-top-bottom-radius: 3px;
+}
+
+#toggle {
+    display: inline-block;
 }
