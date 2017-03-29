@@ -44,12 +44,6 @@ function onPageDetailsReceived(pageDetails) {
     citationMLA = pageDetails.citationMLA;
     citationAPA = pageDetails.citationAPA;
     if (status) {
-<<<<<<< HEAD
-        e('complete_citation').innerHTML = citation.bold() + pageDetails.citationMLA;
-    } else {
-        e('complete_citation').innerHTML = citation.bold() + pageDetails.citationAPA;
-    }
-=======
         e('complete citation').innerHTML = citation.bold() + citationMLA;
     } else {
         e('complete citation').innerHTML = citation.bold() + citationAPA;    }
@@ -62,7 +56,6 @@ function Alert(){
 function Alert2(){
     e('complete citation').innerHTML = citation.bold() + citationMLA;
     status = true;
->>>>>>> 72fccd8f35a0cbe8ae663c2f07d71a90c5fbaec4
 }
 var buttonMLA = document.getElementById('MLA');
 var buttonAPA = document.getElementById('APA');
