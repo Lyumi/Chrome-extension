@@ -34,6 +34,7 @@ function changeHandler(){
 }
 var citationMLA,
     citationAPA;
+
 function onPageDetailsReceived(pageDetails) {
     e('title').innerHTML = title.bold() + pageDetails.title;
     e('author').innerHTML = author.bold() + pageDetails.author;
@@ -43,23 +44,20 @@ function onPageDetailsReceived(pageDetails) {
     e('URL').innerHTML = URL.bold() + pageDetails.URL;
     citationMLA = pageDetails.citationMLA;
     citationAPA = pageDetails.citationAPA;
-    if (status) {
-        e('complete citation').innerHTML = citation.bold() + citationMLA;
-    } else {
-        e('complete citation').innerHTML = citation.bold() + citationAPA;    }
+    MLAButton();
 }
 
-function Alert(){
-    e('complete citation').innerHTML = citation.bold() + citationAPA;
+function APAButton(){
+    e('complete_citation').innerHTML = citation.bold() + citationAPA;
     status = false;
 }
-function Alert2(){
-    e('complete citation').innerHTML = citation.bold() + citationMLA;
+function MLAButton(){
+    e('complete_citation').innerHTML = citation.bold() + citationMLA;
     status = true;
 }
 var buttonMLA = document.getElementById('MLA');
 var buttonAPA = document.getElementById('APA');
-buttonMLA.addEventListener("click",Alert2,false);
-buttonAPA.addEventListener("click",Alert,false);
+buttonMLA.addEventListener("click",MLAButton,false);
+buttonAPA.addEventListener("click",APAButton,false);
 
 console.log("Hi from Popup");
