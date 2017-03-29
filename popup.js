@@ -32,7 +32,8 @@ function changeHandler(){
       status = true;
    }
 }
-
+var citationMLA,
+    citationAPA;
 function onPageDetailsReceived(pageDetails) {
     e('title').innerHTML = title.bold() + pageDetails.title;
     e('author').innerHTML = author.bold() + pageDetails.author;
@@ -40,11 +41,32 @@ function onPageDetailsReceived(pageDetails) {
     e('date').innerHTML = datepublished.bold() + pageDetails.date;
     e('publisher').innerHTML = publisher.bold() + pageDetails.publisher;
     e('URL').innerHTML = URL.bold() + pageDetails.URL;
+    citationMLA = pageDetails.citationMLA;
+    citationAPA = pageDetails.citationAPA;
     if (status) {
+<<<<<<< HEAD
         e('complete_citation').innerHTML = citation.bold() + pageDetails.citationMLA;
     } else {
         e('complete_citation').innerHTML = citation.bold() + pageDetails.citationAPA;
     }
+=======
+        e('complete citation').innerHTML = citation.bold() + citationMLA;
+    } else {
+        e('complete citation').innerHTML = citation.bold() + citationAPA;    }
 }
+
+function Alert(){
+    e('complete citation').innerHTML = citation.bold() + citationAPA;
+    status = false;
+}
+function Alert2(){
+    e('complete citation').innerHTML = citation.bold() + citationMLA;
+    status = true;
+>>>>>>> 72fccd8f35a0cbe8ae663c2f07d71a90c5fbaec4
+}
+var buttonMLA = document.getElementById('MLA');
+var buttonAPA = document.getElementById('APA');
+buttonMLA.addEventListener("click",Alert2,false);
+buttonAPA.addEventListener("click",Alert,false);
 
 console.log("Hi from Popup");
