@@ -5,7 +5,8 @@ var title = "Title: ",
     publisher = "Publisher: ",
     URL = "URL: ",
     citation = "Citation: ",
-    status = false;
+    status = false,
+    selection = false;
 
 
 function e(id) {
@@ -60,4 +61,20 @@ var buttonAPA = document.getElementById('APA');
 buttonMLA.addEventListener("click",MLAButton,false);
 buttonAPA.addEventListener("click",APAButton,false);
 
-console.log("Hi from Popup");
+function selectText(element) {
+    if (selection) return;
+    selection = true;
+    
+
+    var selected = window.getSelection();
+    var range = document.createRange();
+
+    range.selectNodeContents(element);
+    selected.removeAllRanges();
+    selected.addRange(range);
+    selection = false;
+}
+
+e('complete_citation').addEventListener("click",function() {
+    selectText(e('complete_citation'));
+});
