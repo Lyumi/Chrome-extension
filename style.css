@@ -17,22 +17,25 @@ h1 {
 
 
 
-/*
+
 h2 {
     font-weight: normal;
-    color: #fcfff5
+    color: #fcfff5;
+    display: inline;
 }
 
 img {
     border: 0
 }
-*/
+
 body {
    font-family:"Helvetica Neue","Arial",sans-serif;
     overflow: hidden;
 
 }
-
+.citeButtons {
+    display: inline;
+}
 
 .ct-container {
     background: #C1E1ED;

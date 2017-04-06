@@ -30,7 +30,7 @@
 
     "background": {
 
-        "scripts": ["background.js", "event.js"]
+        "scripts": ["event.js"]
     
 },
 
