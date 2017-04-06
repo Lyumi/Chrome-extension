@@ -5,24 +5,16 @@ p {
     margin: 0;
     padding: 0
 }
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    }
 
 h1 {
     left-margin: 10px font-weight: normal;
+    margin-top: 50px;
+    margin-bottom: 1px;
     text-align: left;
     color: #131919
+
 }
+
 
 
 /*
@@ -49,77 +41,15 @@ body {
     margin: 1px auto 2px;
     width: 320px;
 }
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 36px;
-    height: 22px;
-    margin: auto
+h1,copy{
+display: inline;
 }
 
-.switch input {
-    display: none;
+#copy{
+margin-left: 50px;
+width: 75px;
+height: 75px;
 }
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #273D3B;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 2px;
-    bottom: 2px;
-    background-color: #ECF0F1;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #273D3B;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #273D3B;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(14px);
-    -ms-transform: translateX(14px);
-    transform: translateX(14px);
-}
-
-
-/* Rounded sliders */
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-h2 {
-    display: inline;
-}
-
-#toggle {
-    margin: auto;
-    width: 50%;
-}
-
 
 /* delete the outline of the HTML textbox*/
 
@@ -130,18 +60,13 @@ input {
     width: 200px;
 }
 
-input:active {
-    width: auto;
-}
-
-input:focus {
-    min-width: 200px;
-}
-
 #contentBox {
     margin: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     border-radius: 3px;
+}
+#MLA {
+display: block;
 }
 
 #contentBox>div {

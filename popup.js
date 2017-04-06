@@ -49,13 +49,19 @@ function onPageDetailsReceived(pageDetails) {
 }
 
 function APAButton(){
-    e('complete_citation').innerHTML = citation.bold() + citationAPA;
+    e('citeText').innerHTML = citationAPA;
     status = false;
 }
 function MLAButton(){
-    e('complete_citation').innerHTML = citation.bold() + citationMLA;
+    e('citeText').innerHTML =  citationMLA;
     status = true;
 }
+
+copy.onclick = function () {
+        selectText(e('citeText'));
+        document.execCommand('copy');
+    }
+
 var buttonMLA = document.getElementById('MLA');
 var buttonAPA = document.getElementById('APA');
 buttonMLA.addEventListener("click",MLAButton,false);
@@ -75,6 +81,6 @@ function selectText(element) {
     selection = false;
 }
 
-e('complete_citation').addEventListener("click",function() {
-    selectText(e('complete_citation'));
+e('citeText').addEventListener("click",function() {
+    selectText(e('citeText'));
 });
