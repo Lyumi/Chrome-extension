@@ -7,15 +7,19 @@ p {
 }
 
 h1 {
-    left-margin: 10px font-weight: normal;
+    font-weight: heavy;
     margin-top: 50px;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 1px;
     text-align: left;
     color: #131919
 
 }
 
-
+button{
+    display:inline-block;
+}
 
 
 h2 {
@@ -49,9 +53,10 @@ display: inline;
 }
 
 #copy{
-margin-left: 50px;
-width: 75px;
-height: 75px;
+margin-left: 25px;
+margin-bottom: 10px;
+width: 62px;
+height: 62px;
 }
 
 /* delete the outline of the HTML textbox*/
@@ -69,7 +74,10 @@ input {
     border-radius: 3px;
 }
 #MLA {
-display: block;
+display: inline-block;
+}
+#APA {
+display: inline-block;
 }
 
 #contentBox>div {
