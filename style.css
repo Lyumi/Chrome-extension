@@ -27,6 +27,26 @@ h2 {
     color: #fcfff5;
     display: inline;
 }
+.button {
+    background-color: #00CED; /* Green */
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #000000;
+}
+
+.button:hover {
+    background-color: #3b444b;
+    color: white;
+}
+
 
 img {
     border: 0
@@ -36,9 +56,6 @@ body {
    font-family:"Helvetica Neue","Arial",sans-serif;
     overflow: hidden;
 
-}
-.citeButtons {
-    display: inline;
 }
 
 .ct-container {
@@ -53,10 +70,11 @@ display: inline;
 }
 
 #copy{
-margin-left: 25px;
+margin-left: 20px;
 margin-bottom: 10px;
-width: 62px;
-height: 62px;
+width: 70px;
+height: 70px;
+text-align: center;
 }
 
 /* delete the outline of the HTML textbox*/
