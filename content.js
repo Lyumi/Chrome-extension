@@ -74,8 +74,6 @@ function universalAuthorParser(qx, log) {
     }
 }
 
-
-
 function getMetaName(key, filler) {
     for (var i = 0; i < metas.length; i++) {
         if (metas[i].getAttribute("name") == key) {
@@ -114,25 +112,40 @@ var author2 = 'n.a',
     whitespaceChar = author2.indexOf(" ") >= 0,
     authorL = author2.substr(whitespaceChar),
     authorF = author2.substr(0, whitespaceChar);
+//Date
+if (getMetaProp("og:pubdate","n.d")){
+    published_date = getMetaProp("og:pubdate");
+}
+if (getMetaName("pubdate","n.d")){
+    published_date = getMetaName("pubdate");
+}
 
-//Website Title
-if (getMetaProp("og:title","") != "") {
+//website name
+if (getMetaProp("og:site_name","")){
+    
+}
+
+//webpage title
+if (getMetaProp("og:title", "") != "") {
     title = getMetaProp("og:title");
 }
-if (getMetaName("twitter:title","") != "") {
+if (getMetaName("twitter:title", "") != "") {
     title = getMetaName("twitter:title");
 }
-if (getMetaProp("og:site_name","no_title") != "no_title") {
+if (getMetaProp("og:site_name", "no_title") != "no_title") {
     siteName = getMetaProp("og:site_name");
 }
-if (getMetaProp("og:url","no_title") != "no_title") {
+if (getMetaProp("og:url", "no_title") != "no_title") {
     URL = getMetaProp("og:url");
 }
 
 //Publisher
 publisher2 = getMetaName('DC.Publisher', '');
-if (publisher2 = "") {
-    publisher2 = websitetitle2;
+if (publisher2 != "") {
+    publisher2 += ", "
+}
+if (publisher2 == "") {
+    publisher2 =websitetitle2 + ", ";
 }
 
 //Author
@@ -141,11 +154,11 @@ universalAuthorParser("a[href*='contributor']");
 universalAuthorParser("a[href*='author']");
 universalAuthorParser("[rel='author']");
 universalAuthorParser(".author");
-author2 = author2.split(",")[0]; // because above queries often picks up wrong authors, too
+author2 = author2.split(",")[0]; 
 universalAuthorParser(".byline");
 universalAuthorParser("[itemprop='author']");
 universalAuthorParser("[name*='DC.Creator']");
-universalAuthorParser("[name*='DC.creator']"); // for "creator" or "Creator" which both occur often as a result of the Dublin Core standard
+universalAuthorParser("[name*='DC.creator']"); 
 universalAuthorParser("head [property*=Author]");
 universalAuthorParser("head [property*=author]");
 if (getMetaProp("article:author", "") != "" && isNaN(parseInt(getMetaProp("article:author", "") == true)) && includes(getMetaProp("article:author"), ['facebook', 'author', 'subscribe', 'http']) == false) {
@@ -156,6 +169,8 @@ author2 = getMetaName('Author', author2);
 if (getMetaName("citation_author", "") != "") {
     author2 = getMetaName("citation_author");
 }
+
+
 
 
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";
