@@ -47,8 +47,6 @@ function textNorm(string) {
 
 function universalAuthorParser(qx, log) {
     current = author2;
-    // given a list of DOM elements, sets AUTHOR as the most appropriate choice found within the list
-    // also formats the AUTHOR variable value as comma-separate list string for multiple authors
     if ($(qx).length >= 1 || author2 == "n.a") {
 
         author2 = "";
@@ -58,7 +56,6 @@ function universalAuthorParser(qx, log) {
         if (counter > 10) counter = 10;
 
         for (var i = 0; i < counter; i++) {
-            // is the value of the element's content formatted correctly (not Twitter handles, user IDs, etc)?
             if (author2.indexOf(textNorm(authors[i].innerText)) == -1 && !includes(authors[i].innerText, ['about ', 'author', '@', ':', '0'])) {
                 autin = textNorm(authors[i].innerText).split(' ');
 
@@ -118,15 +115,27 @@ var author2 = 'n.a',
     authorL = author2.substr(whitespaceChar),
     authorF = author2.substr(0, whitespaceChar);
 
+//Website Title
+if (getMetaProp("og:title","") != "") {
+    title = getMetaProp("og:title");
+}
+if (getMetaName("twitter:title","") != "") {
+    title = getMetaName("twitter:title");
+}
+if (getMetaProp("og:site_name","no_title") != "no_title") {
+    siteName = getMetaProp("og:site_name");
+}
+if (getMetaProp("og:url","no_title") != "no_title") {
+    URL = getMetaProp("og:url");
+}
 
+//Publisher
+publisher2 = getMetaName('DC.Publisher', '');
+if (publisher2 = "") {
+    publisher2 = websitetitle2;
+}
 
-websitetitle2 = getMetaProp('og:site_name', websitetitle2);
-
-
-published_date = getMetaProp('og:pubdate', published_date);
-
-// getting authors
-// done in order of reliability
+//Author
 universalAuthorParser("a[href*='journalist']");
 universalAuthorParser("a[href*='contributor']");
 universalAuthorParser("a[href*='author']");
