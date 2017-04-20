@@ -51,10 +51,18 @@ function onPageDetailsReceived(pageDetails) {
 function APAButton(){
     e('citeText').innerHTML = citationAPA;
     status = false;
+    document.getElementById('APA').style.backgroundColor = "#000000";
+    document.getElementById('APA').style.color = "white";
+    document.getElementById('MLA').style.backgroundColor = "#C0C0C0";
+    document.getElementById('MLA').style.color = "black"
 }
 function MLAButton(){
     e('citeText').innerHTML =  citationMLA;
     status = true;
+    document.getElementById('MLA').style.backgroundColor = "#000000";
+    document.getElementById('MLA').style.color = "white";
+    document.getElementById('APA').style.backgroundColor = "#C0C0C0";
+    document.getElementById('APA').style.color = "black"
 }
 
 copy.onclick = function () {
@@ -84,3 +92,11 @@ function selectText(element) {
 e('citeText').addEventListener("click",function() {
     selectText(e('citeText'));
 });
+
+var mouseistener = function () {
+    document.removeEventListener('mousemove', mouseListener, false);
+    selectText(e('citeText'));
+    document.execCommand('copy');
+};
+
+document.addEventListener('mousemove', mouseListener, false);

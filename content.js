@@ -20,7 +20,7 @@ var m_names = new Array("Jan", "Feb", "Mar",
     curr_date = d.getDate(),
     curr_month = d.getMonth(),
     curr_year = d.getFullYear(),
-    accessed_date = (curr_date + " " + m_names[curr_month] + " " + curr_year),
+    accessed_date = (curr_date + " " + m_names[curr_month] + ", " + curr_year),
     accessed_dateMLA = (curr_date + " " + m_names[curr_month] + ", " + curr_year),
     metas = document.getElementsByTagName('meta');
 
