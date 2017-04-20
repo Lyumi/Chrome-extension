@@ -113,16 +113,19 @@ var author2 = 'n.a',
     authorL = author2.substr(whitespaceChar),
     authorF = author2.substr(0, whitespaceChar);
 //Date
-if (getMetaProp("og:pubdate","n.d")){
+
+if (getMetaProp("og:pubdate","")!=""){
     published_date = getMetaProp("og:pubdate");
 }
-if (getMetaName("pubdate","n.d")){
+if (getMetaName("pubdate","")!= ""){
     published_date = getMetaName("pubdate");
 }
 
+if (published_date == "") published_date = "n.d"
+
 //website name
 if (getMetaProp("og:site_name","")){
-    
+    websitetitle2 = getMetaProp("og:site_name","")
 }
 
 //webpage title
@@ -141,12 +144,10 @@ if (getMetaProp("og:url", "no_title") != "no_title") {
 
 //Publisher
 publisher2 = getMetaName('DC.Publisher', '');
-if (publisher2 != "") {
-    publisher2 += ", "
-}
 if (publisher2 == "") {
-    publisher2 =websitetitle2 + ", ";
+    publisher2 =websitetitle2;
 }
+
 
 //Author
 universalAuthorParser("a[href*='journalist']");
@@ -173,6 +174,7 @@ if (getMetaName("citation_author", "") != "") {
 
 
 
+
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";
 
 var completecitationAPA = authorL + ", " + authorF + "." + accessed_date + ". " + title2 + ". " + "Retrieved from " + URL2;
@@ -184,5 +186,6 @@ chrome.runtime.sendMessage({
     'date': published_date,
     'websitetitle': websitetitle2,
     'citationMLA': completecitationMLA,
-    'citationAPA': completecitationAPA
+    'citationAPA': completecitationAPA,
+    'publisher': publisher2
 });
