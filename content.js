@@ -1,7 +1,5 @@
 function e(id) {
-
     return document.getElementById(id)
-
 }
 
 var $ = function(selector) {
@@ -45,7 +43,7 @@ function textNorm(string) {
     return string.trim().toLowerCase();
 }
 
-function universalAuthorParser(qx, log) {
+function getAuthor(qx, log) {
     current = author2;
     if ($(qx).length >= 1 || author2 == "n.a") {
 
@@ -64,8 +62,6 @@ function universalAuthorParser(qx, log) {
                         autin[j] = '';
                     }
                 }
-                author2 += autin.join(' ');
-                if (i < authors.length - 1) { author2 += ", " }
             }
         }
     }
@@ -73,6 +69,36 @@ function universalAuthorParser(qx, log) {
         author2 = current;
     }
 }
+
+function AuthorPraser(str) {
+    var str1 = str;
+    removed = ['and', 'or', websitetitle2];
+    authorList = str.split(" ");
+
+
+    str = str.replace(',', '')
+    for (var i = 0; i < removed.length; i++) {
+        if (authorList.indexOf(removed[i]) > 0) {
+            authorList = authorList.filter(item => item != removed[i]);
+        }
+    }
+    return authorList.toString();
+}
+
+function DateParser(query, key) {
+    if ($(query).length >= 1) {
+        kdt = $(query);
+        for (i = 0; i < kdt.length; i++) {
+            if (parseInt(kdt[i].getAttribute(key)).toString().length == 4) {
+                if (kdt[i].getAttribute(key).substr(0,10) < kdat) {
+                    dateparser(kdt[i].getAttribute(key));
+                    kdat = kdt[i]
+                }
+            }
+        }
+    }
+}
+
 
 function getMetaName(key, filler) {
     for (var i = 0; i < metas.length; i++) {
@@ -114,18 +140,18 @@ var author2 = 'n.a',
     authorF = author2.substr(0, whitespaceChar);
 //Date
 
-if (getMetaProp("og:pubdate","")!=""){
+if (getMetaProp("og:pubdate", "") != "") {
     published_date = getMetaProp("og:pubdate");
 }
-if (getMetaName("pubdate","")!= ""){
+if (getMetaName("pubdate", "") != "") {
     published_date = getMetaName("pubdate");
 }
 
 if (published_date == "") published_date = "n.d"
 
 //website name
-if (getMetaProp("og:site_name","")){
-    websitetitle2 = getMetaProp("og:site_name","")
+if (getMetaProp("og:site_name", "")) {
+    websitetitle2 = getMetaProp("og:site_name", "")
 }
 
 //webpage title
@@ -145,23 +171,24 @@ if (getMetaProp("og:url", "no_title") != "no_title") {
 //Publisher
 publisher2 = getMetaName('DC.Publisher', '');
 if (publisher2 == "") {
-    publisher2 =websitetitle2;
+    publisher2 = websitetitle2;
 }
+if (publisher2 == ""){ publisher2 = "n.P"}
 
 
 //Author
-universalAuthorParser("a[href*='journalist']");
-universalAuthorParser("a[href*='contributor']");
-universalAuthorParser("a[href*='author']");
-universalAuthorParser("[rel='author']");
-universalAuthorParser(".author");
-author2 = author2.split(",")[0]; 
-universalAuthorParser(".byline");
-universalAuthorParser("[itemprop='author']");
-universalAuthorParser("[name*='DC.Creator']");
-universalAuthorParser("[name*='DC.creator']"); 
-universalAuthorParser("head [property*=Author]");
-universalAuthorParser("head [property*=author]");
+getAuthor("a[href*='journalist']");
+getAuthor("a[href*='contributor']");
+getAuthor("a[href*='author']");
+getAuthor("[rel='author']");
+getAuthor(".author");
+author2 = author2.split(",")[0];
+getAuthor(".byline");
+getAuthor("[itemprop='author']");
+getAuthor("[name*='DC.Creator']");
+getAuthor("[name*='DC.creator']");
+getAuthor("head [property*=Author]");
+getAuthor("head [property*=author]");
 if (getMetaProp("article:author", "") != "" && isNaN(parseInt(getMetaProp("article:author", "") == true)) && includes(getMetaProp("article:author"), ['facebook', 'author', 'subscribe', 'http']) == false) {
     author2 = getMetaProp("article:author", "");
 }
@@ -170,6 +197,8 @@ author2 = getMetaName('Author', author2);
 if (getMetaName("citation_author", "") != "") {
     author2 = getMetaName("citation_author");
 }
+author2 = AuthorPraser(author2);
+
 
 
 
@@ -177,7 +206,7 @@ if (getMetaName("citation_author", "") != "") {
 
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";
 
-var completecitationAPA = authorL + ", " + authorF + "." + accessed_date + ". " + title2 + ". " + "Retrieved from " + URL2;
+var completecitationAPA = author2 + "." + accessed_date + ". " + title2 + ". " + "Retrieved from " + URL2;
 
 chrome.runtime.sendMessage({
     'title': title2,
