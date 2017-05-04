@@ -22,7 +22,6 @@ var m_names = new Array("Jan", "Feb", "Mar",
     accessed_dateMLA = (curr_date + " " + m_names[curr_month] + ", " + curr_year),
     metas = document.getElementsByTagName('meta');
 
-
 function includes(str, array) {
 
     // checks if any words from given array occurs in a string str
@@ -199,9 +198,16 @@ if (getMetaName("citation_author", "") != "") {
 }
 author2 = AuthorPraser(author2);
 
+if((published_date)!="n.d"){
+published_date=published_date.replace(/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/g,'/');
+publishedYear=published_date.substring(0,4);
+publishedMonth=published_date.substring(5,7);
+publishedDay=published_date.substring(8,10);
+if(publishedDay.charAt(0)=="0")
+    publishedDay=publishedDay.substring(1);
+published_date=(publishedDay + " " + m_names[publishedMonth-1] + ", " + publishedYear);
 
-
-
+}
 
 
 var completecitationMLA = author2 + ". " + '"' + title2 + '"' + ". " + websitetitle2.italics() + ". " + publisher2 + ". " + published_date + ". " + "Web." + accessed_dateMLA + ".";

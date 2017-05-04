@@ -93,7 +93,7 @@ e('citeText').addEventListener("click",function() {
     selectText(e('citeText'));
 });
 
-var mouseistener = function () {
+var mouseListener = function () {
     document.removeEventListener('mousemove', mouseListener, false);
     selectText(e('citeText'));
     document.execCommand('copy');
